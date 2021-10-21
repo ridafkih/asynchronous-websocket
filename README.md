@@ -24,7 +24,7 @@ An expirement on async WebSockets. This allows for a developer to take advantage
 2. In this example, the `uuid` key must still be present on the top-level of the payload object. However, it could be made to be optional.
 3. In this example, if a request utilizes the UUID, if the client-side `Socket` WebSocket wrapper, the event emitted is `'message-{{uuid}}'` and is internally managed, otherwise it emits a `'message'`, event. This could be changed depending on the client-side implementation.
 4. Since the UUID is only used as a client reference, it is safe for the client to generate the UUID. The asynchronous logic is all handled on the client side, so if someone were to bypass our implementation of the client and develop their own API wrapper, or client, they would be responsible for handling responses synchronously, or building their own asynchronous implementation.
-5. An implementation could also be built where the server would also be able to handle requests in the same way as the client. Which would allow for an almost two-way traditional request coding style.
+5. An implementation could also be built where the server would also be able to handle requests in the same way as the client. Which would allow for the server to make more traditional styled requests to the client as if it were a server.
 
 
 ### Usage
