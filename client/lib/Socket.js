@@ -1,9 +1,6 @@
 const { WebSocket } = require("ws");
 const { v4 } = require("uuid");
-const dotenv = require("dotenv");
 const { EventEmitter } = require("stream");
-
-dotenv.config();
 
 const parseWebSocketData = ({ data }) => {
   let message;
