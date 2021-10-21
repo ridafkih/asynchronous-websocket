@@ -20,6 +20,7 @@ const handleMessage = function (data) {
   if (!message) return;
 
   const request = this.requests.find(({ uuid }) => message.uuid === uuid);
+  if (!request && request.uuid) return;
   if (!request) return this.emit("message", message);
 
   const { uuid, timeout } = request;
