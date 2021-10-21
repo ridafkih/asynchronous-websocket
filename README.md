@@ -1,4 +1,4 @@
-## WebSocket Request-Response
+## asynchronous-websocket
 
 An expirement on async WebSockets. This allows for a developer to take advantage of the benefits of bilateral communication while maintaining a traditional request-response information flow. Implementing something like this into an application would allow a developer to send a WebSocket "request" and treat the response asynchronously, allowing a for easier continuity of information. 
 
