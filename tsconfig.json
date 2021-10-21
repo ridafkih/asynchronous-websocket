@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": "src",
+    "rootDir": "src",
+    "outDir": "dist",
+    "paths": {
+      "@actions/*": ["actions/*"],
+      "@helpers/*": ["helpers/*"],
+      "@handlers/*": ["handlers/*"],
+      "@modules/*": ["modules/*"],
+      "@typings/*": ["typings/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}
