@@ -27,7 +27,7 @@ An expirement on async WebSockets. This allows for a developer to take advantage
 5. An implementation could also be built where the server would also be able to handle requests in the same way as the client. Which would allow for the server to make more traditional styled requests to the client as if it were a server.
 
 
-### Usage
+### Installation
 1. Run setup to install dependencies.
 
 `npm run setup`
@@ -39,3 +39,29 @@ An expirement on async WebSockets. This allows for a developer to take advantage
 3. Run the test client to test the example use-case.
 
 `npm run client`
+
+### Usage
+```js
+/**
+ * Using the client-side Socket constructor that wraps the 'ws' modules' WebSocket object
+ * a request can be sent in an asynchronous fashion. If the operation succeeds, and
+ * a response with the automatically generated UUID is received and can be correlated
+ * with a request, it will resolve. If the request times out (defaults to 10000ms) it
+ * will reject.
+**/
+
+const Socket = require('./lib/Socket');
+const ws = new Socket();
+
+const handleReady = () => {
+  ws.sendRequest("sum", {
+    numbers: [1, 2, 3];
+  })
+  .then(message => {
+    console.log("WebSocket request resolved", message);
+  })
+  .catch(console.error);
+};
+
+ws.once("ready", handleReady);
+```
